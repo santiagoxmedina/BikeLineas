@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class LineElement : MonoBehaviour
 {
-    public LineApplication app { get { return FindObjectOfType<LineApplication>(); } }
+    private LineApplication _app;
+    public LineApplication app { get { if (_app == null) { _app = FindObjectOfType<LineApplication>(); } return _app; } }
 }
